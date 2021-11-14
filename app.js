@@ -1,13 +1,20 @@
+//VARIABLES
 const input = document.querySelector(".input");
 const submitBtn = document.querySelector(".submit");
 const todoList = document.querySelector(".todo-list");
 const filterOption = document.querySelector(".filter-todo");
+
+//EVENT LISTENERS 1 fct - as soon as the page is loaded it gets the stored todos and displays it on the screen
+//2 fct - as soon as somebody hits the submit button we call the addTodo function so the todo can be created
+//3 fct - consists of either making a task completed visually or removing it
+//4 ftc - consits of filtering the completed, uncompleted tasks or showing all of them
 
 document.addEventListener('DOMContentLoaded', getTodos);
 submitBtn.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteTodo);
 filterOption.addEventListener("click", filterTodo);
 
+//FUNCTIONS
 function addTodo(e){
     e.preventDefault();
     //creating the new container
@@ -33,6 +40,7 @@ function addTodo(e){
     //appending the ultimate div to the ul HTML
     todoList.appendChild(todoDiv);
 }
+
 function deleteTodo(e) {
     const item = e.target;
   
@@ -41,7 +49,7 @@ function deleteTodo(e) {
       const todo = item.parentElement;
       todo.classList.add("fall");
       removeLocalTodos(todo);
-      //at the end
+      //including a bit of animation and after that it will be removed
         todo.addEventListener("transitionend", e => {
         todo.remove();
       });
@@ -77,7 +85,7 @@ function filterTodo(e){
        }
     });
 }
-
+//Saving in local storage
 function saveLocalTodos(todo){
     let todos;
     if(localStorage.getItem("todos") === null){
@@ -88,7 +96,7 @@ function saveLocalTodos(todo){
     todos.push(todo);
     localStorage.setItem("todos", JSON.stringify(todos));
 }
-
+//Removing from local storage if an item gets deleted
 function removeLocalTodos(todo){
     let todos;
     if(localStorage.getItem("todos") === null){
@@ -100,7 +108,7 @@ function removeLocalTodos(todo){
     todos.splice(todos.indexOf(todoIndex),1);
     localStorage.setItem("todos",JSON.stringify(todos));
 }
-
+//Displaying on users screen the to do list from local storage and creating its necessary components that is similar as the addTodo 
 function getTodos(){
     let todos;
     if(localStorage.getItem("todos") ===null){
