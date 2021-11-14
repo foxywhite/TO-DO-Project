@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(90deg, white, rgb(158, 4, 158));
+}
+header{
+    text-align:center;
+    font-size: 2rem;
+    color: white;
+    margin-top: 3rem;
+}
+form{
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin-top: 3rem;
+}
+.input{
+    font-size: 2rem;
+    padding: 0.75rem;
+    border: none;
+    margin-left: 10rem;
+    border-radius:2rem;
+    color: purple;
+    text-align: center;
+}
+.submit{
+    border: none;
+    padding:1.5rem;
+    margin-left: 1rem;
+    border-radius:2rem;
+    color: purple;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.submit:hover{
+    background-color: purple;
+    color: white;
+}
+.select{
+    border: none;
+    padding:2rem;
+}
+
+.todo-container{
+    display: flex;
+    justify-content: center;
+}
+.todo-list{
+    list-style: none;
+    font-size:1.5rem;
+}
+.todo{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    background-color: lavender;
+    transition: all 0.5s ease;
+    width:40rem;
+}
+.todo li{
+    flex:1;
+    padding:1rem;
+}
+.complete-btn,
+.delete-btn{
+    padding: 0.75rem;
+    background-color: greenyellow;
+    border:none;
+    cursor:pointer;
+    width:3rem;
+}
+.delete-btn{
+    background-color: red;
+    color: lavender;
+}
+.fa-trash,
+.fa-complete{
+    pointer-events: none;
+}
+.completed{
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.fall{
+    transform: translateX(50px);
+    opacity:0.5;
+}
