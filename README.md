@@ -1,5 +1,5 @@
 # TO-DO-Project
-1-proiect curs
+1-proiect
 
 Contine: un fisier HTML, un fisier CSS, un fisier JavaScript.
 
